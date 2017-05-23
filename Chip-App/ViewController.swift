@@ -10,14 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var helloLabel : UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let labelHeight: CGFloat = 50.0
+        let labelWidth: CGFloat = 150.0
+        
+        helloLabel = UILabel(frame: CGRect(x: view.center.x - labelWidth/2, y: view.center.y - labelHeight/2, width: labelWidth, height: labelHeight))
+        helloLabel.minimumScaleFactor = 0.5
+        helloLabel.lineBreakMode = .byCharWrapping
+        helloLabel.numberOfLines = 0
+        helloLabel.textAlignment = .center
+        helloLabel.textColor = UIColor.blue
+        helloLabel.font = UIFont.systemFont(ofSize: 24.0)
+        helloLabel.text = "Hello World!"
+        
+        view.addSubview(helloLabel)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
